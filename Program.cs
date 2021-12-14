@@ -24,6 +24,8 @@ namespace ThisIsADartGame_v01
         static void EingabeZuDaten(int ZielZahl,int Radius, string Multi)
         {
             int[] Feld = new int[20] { 6, 13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10 };
+            int x = 0;
+            int y = 0;
 
             // Diese For-Schleife findet die genaue Poitsition des angestrebten Feldes in der Variable Feld heraus.
             for (int i = 0; i < Feld.Length; i++)
@@ -31,9 +33,13 @@ namespace ThisIsADartGame_v01
                 if (Feld[i] == ZielZahl)
                 {
                     Console.WriteLine(i+1);
+                    x = i + 1;
                     i = 20;
                 }
             }
+
+            // Hier erhält man den Winkel des Feldes.
+            y = x * 18 - 8;
 
         }
 
@@ -94,7 +100,6 @@ namespace ThisIsADartGame_v01
                     Console.WriteLine("Möchten sie mich verarschen.");
                 }
             }
-
 
             ConventMultiToRadius(Radius);
             EingabeZuDaten(ZielZahl,Radius, Multi);
