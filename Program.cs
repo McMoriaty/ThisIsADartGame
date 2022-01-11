@@ -12,14 +12,32 @@ namespace DartGame
     }
     class Program
     {
-    
+        private static Array CartToPolar(double x, double y)
+        {
+            double radius = Math.Sqrt((x * x) + (y * y));
+            double alpha = Math.Atan(y / x);
+
+            double[] CartToPolar = new double[2] { radius, alpha };
+
+            return CartToPolar;
+
+        }
+        private static Array PolarToCart(double radius, double alpha)
+        {
+            double x = radius * Math.Cos(alpha);
+            double y = radius * Math.Sin(alpha);
+
+            double[] PolarToCart = new double[2] { x, y };
+
+            return PolarToCart;
+        }
+
         static void Main(string[] args)
         {
             int Score = 501;
             int Counter = 0;
             while (Score>0)
             {
-
 
                 Console.WriteLine("Für einen Wurf in das Bulseye drücken sie die 1.");
                 Console.WriteLine("Für einen Wurf in das Eye drücken sie die 2.");
