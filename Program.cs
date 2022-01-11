@@ -12,53 +12,12 @@ namespace DartGame
     }
     class Program
     {
-        private int ZielZahlInWinkel(int Zielzahl)
-        {
-            int[] ScheibenZahl = new int[20] { 6, 13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10 };
-            int[] Winkelmitte = new int[20] { 0, 18, 36, 54, 72, 90, 108, 126, 144, 162, 180, 198, 216, 234, 252, 270, 288, 306, 324, 342 };
-            int aby;
-            for (int i = 0; i < 19; i++)
-            {
-                if (Zielzahl == ScheibenZahl[i])
-                {
-
-
-
-                    i = aby;
-
-
-                }
-            }
-            return aby;
-        }
-
-
-        private static Array Genauigkeit(int Radius, int Winkel, int Promille)
-        {
-            Random WinkelKorrektur = new Random();
-            int WinkelKorrekturAnwendung = WinkelKorrektur.Next(0, 15);
-            Winkel = Winkel + WinkelKorrekturAnwendung + WinkelKorrekturAnwendung * Promille;
-
-
-
-            Random RadiusKorrektur = new Random();
-            int RadiusKorrekturAnwendung = RadiusKorrektur.Next(0, 20);
-            Radius = Radius + RadiusKorrekturAnwendung + RadiusKorrekturAnwendung * Promille;
-
-
-
-            int[] WinkelRadius = new int[2] { Winkel, Radius };
-            Console.WriteLine(Radius);
-            Console.WriteLine(Winkel);
-            return WinkelRadius;
-        }
-
-        
+    
         static void Main(string[] args)
         {
             int Score = 501;
             int Counter = 0;
-            while (Counter>0)
+            while (Score>0)
             {
 
 
@@ -113,12 +72,7 @@ namespace DartGame
                     else if (GrossKleinFeld == 2)
                     {
                         Radius = 38;
-                    }
-
-
-                    Console.WriteLine("Wie viel Shots haben Sie intus");
-                    Promille = Int32.Parse(Console.ReadLine());
-                    Console.WriteLine(Genauigkeit(Radius, Winkel, Promille));
+                    }   
 
                 }
                 else
@@ -126,8 +80,6 @@ namespace DartGame
                     Console.WriteLine("Möchten sie mich verarschen.");
                 }
             }
-
-
             if (Score==0)
             {
                 Console.WriteLine("Dein Ergebniss ist "+Counter);
@@ -137,11 +89,6 @@ namespace DartGame
                 Counter = Counter + 2 *(Score * -1);
                 Console.WriteLine("Dein Ergebniss ist " + Counter);
             }
-
-
-
-
-
             Console.WriteLine(@"                         __.__                         ");
             Console.WriteLine(@"                    ____/     \____                    ");
             Console.WriteLine(@"                ___/      20       \___                ");
@@ -162,12 +109,6 @@ namespace DartGame
             Console.WriteLine(@"               \___  19         17  ___/               ");
             Console.WriteLine(@"                   \____   3   ____/                   ");
             Console.WriteLine(@"                        \__.__/                        ");
-
-
-
-
-
-
         }
     }
 }
