@@ -12,6 +12,21 @@ namespace DartGame
     }
     class Program
     {
+        private static int alpha(int number)
+        {
+            int[] TargetNumber = new int[20] { 6, 13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10 };
+            int[] middlealpha = new int[20] { 0, 18, 36, 54, 72, 90, 108, 126, 144, 162, 180, 198, 216, 234, 252, 270, 288, 306, 324, 342 };
+
+            for (int i = 0; i < 19; i++)
+            {
+                if (number == TargetNumber[i])
+                {
+                    return middlealpha[i];
+                }
+            }
+            return 0;
+        }
+
         private static Array CartToPolar(double x, double y)
         {
             double radius = Math.Sqrt((x * x) + (y * y));
