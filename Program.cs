@@ -116,6 +116,29 @@ namespace DartGame
 
 
 
+
+
+            Console.WriteLine(@"                         __.__                         ");
+            Console.WriteLine(@"                    ____/     \____                    ");
+            Console.WriteLine(@"                ___/      20       \___                ");
+            Console.WriteLine(@"             __/       5       1       \__             ");
+            Console.WriteLine(@"          __/   12                  18    \__          ");
+            Console.WriteLine(@"         /                                   \         ");
+            Console.WriteLine(@"      __/  9                              4   \__      ");
+            Console.WriteLine(@"    _/                                           \_    ");
+            Console.WriteLine(@"   /   14                                    13    \   ");
+            Console.WriteLine(@"  /                        \ /                      \  ");
+            Console.WriteLine(@" {  11                      X                     6  } ");
+            Console.WriteLine(@"  \                        / \                      /  ");
+            Console.WriteLine(@"   \_  8                                      10  _/   ");
+            Console.WriteLine(@"     \__                                       __/     ");
+            Console.WriteLine(@"        \   16                           15   /        ");
+            Console.WriteLine(@"         \__                               __/         ");
+            Console.WriteLine(@"            \__  7                   2  __/            ");
+            Console.WriteLine(@"               \___  19         17  ___/               ");
+            Console.WriteLine(@"                   \____   3   ____/                   ");
+            Console.WriteLine(@"                        \__.__/                        ");
+
         }
     }
 }
