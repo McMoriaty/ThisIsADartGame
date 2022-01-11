@@ -4,45 +4,40 @@ namespace Test_functionpolarcart
 {
     class Program
     {
-        private static Tuple<double,double> CartToPolar(double x, double y)
+        private static Array CartToPolar(double x, double y)
         {
             double radius = Math.Sqrt((x * x) + (y * y));
             double alpha = Math.Atan(y/x);
 
-            try
-            {
-                return new Tuple<double, double>(radius, alpha);
-            }
-            catch (Exception)
-            {
-                return new Tuple<double, double>(radius, alpha);
-            }
+            double[] CartToPolar = new double[2] { radius, alpha };
 
+            return CartToPolar;
             
         }
-        private static Tuple<double, double> PolarToCart(double radius, double alpha)
+        private static Array PolarToCart(double radius, double alpha)
         {
             double x = radius * Math.Cos(alpha);
             double y = radius * Math.Sin(alpha);
 
-            try
-            {
-                return new Tuple<double, double>(x, y);
-            }
-            catch (Exception)
-            {
-                return new Tuple<double, double>(x, y);
-            }
+            double[] PolarToCart = new double[2] { x, y };
 
-
+            return PolarToCart;
+        }
+        private static void ArrayToString(Array Target)
+        {
+            foreach (var item in Target)
+            {
+                Console.WriteLine(Convert.ToString(item));
+            }
         }
         static void Main(string[] args)
         {
-            double x;
-            double y;
+            double[] XY = new double[2] { 1, 15 };
+            double[] RadiusAlpha = new double[2] { 3.1622776601683795, 1.2490457723982544 };
 
-            Console.WriteLine(CartToPolar(1, 3));
-            Console.WriteLine(PolarToCart(3.1622776601683795, 1.2490457723982544));
+            ArrayToString(CartToPolar(XY[0], XY[1]));
+            ArrayToString(PolarToCart(RadiusAlpha[0], RadiusAlpha[1]));
+
         }
     }
 }
