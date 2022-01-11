@@ -12,21 +12,20 @@ namespace DartGame
     }
     class Program
     {
-        private static int alpha(int number)
+        private static int alpha(int Number)
         {
             int[] TargetNumber = new int[20] { 6, 13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10 };
             int[] middlealpha = new int[20] { 0, 18, 36, 54, 72, 90, 108, 126, 144, 162, 180, 198, 216, 234, 252, 270, 288, 306, 324, 342 };
 
             for (int i = 0; i < 19; i++)
             {
-                if (number == TargetNumber[i])
+                if (Number == TargetNumber[i])
                 {
                     return middlealpha[i];
                 }
             }
             return 0;
         }
-
         private static Array CartToPolar(double x, double y)
         {
             double radius = Math.Sqrt((x * x) + (y * y));
@@ -80,21 +79,22 @@ namespace DartGame
                 else if (b == 3)
                 {
                     Console.WriteLine("Geben sie die Zahl zwischen 1-20 ein welche sie treffen wollen!");
-                    int ZielZahl = Int32.Parse(Console.ReadLine());
+                    int Number = Int32.Parse(Console.ReadLine());
+                    PolarToCart(Number,alpha(Number));
                     Radius = 55;
 
                 }
                 else if (b == 4)
                 {
                     Console.WriteLine("Geben sie die Zahl zwischen 1-20 ein welche sie treffen wollen!");
-                    int ZielZahl = Int32.Parse(Console.ReadLine());
+                    int Number = Int32.Parse(Console.ReadLine());
 
                     Radius = 85;
                 }
                 else if (b == 5)
                 {
                     Console.WriteLine("Geben sie die Zahl zwischen 1-20 ein welche sie treffen wollen!");
-                    int ZielZahl = Int32.Parse(Console.ReadLine());
+                    int Number = Int32.Parse(Console.ReadLine());
 
                     Console.WriteLine("Möchten Sie in das grössere/äussere Singel Feld schiessen, dann drücken sie 1. Wenn sie jedoch das kleinere/innere treffen wollen drücken Sie 2.");
                     int GrossKleinFeld = Int32.Parse(Console.ReadLine());
