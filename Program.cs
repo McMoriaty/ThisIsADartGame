@@ -2,6 +2,14 @@
 
 namespace DartGame
 {
+    public class DartGame 
+    {
+        public override string Name => "Dart";
+        public override string Description => "In diesem Spiel geht es um Dart. Sie dürfen einen Pfeil werfen und je nach Anzahl Punkten wird Ihnen Punkte vom Startwert abgezogen.  Ziel dieses Spiel ist es 0 Punkte zu erreichen. Wenn Sie 0 Punkte unterschreiten bekommen sie eine kleine Strafe und das Spiel ist beendet. Je weniger Würfe sie gebraucht haben, desto besser haben Sie abgeschnitten. ";
+        public override string Rules => "Sie werfen einen Pfeil auf ein bestimmtes Feld, mit gewisser Wahrscheinlichkeit treffen sie genau dieses Feld oder in einem Kreisförmigen Umfeld ein anderes Feld. Diese Punkte werden Ihnen vom Startwert (501 Punkte) abgezogen. Sie spielen solange bis Sie einen Wert erreichen der kleiner  oder gleich 0 ist. Wenn sie es schaffen 0 Punkte genau zu erreichen ist Ihr Endergebnis gleich der Anzahl Pfeile die Sie geworfen haben, und das Spiel ist beendet. Wenn sie 0 Punkte unterschreiten bekommen Sie 2 mal die Punkte welche Sie unter 0 geworfen haben zu den Anzahl Würfen dazu addiert, und somit ist das Spiel auch hier beendet.";
+        public override bool TheHigherTheBetter => false;
+        public override int LevelMax => 1;
+    }
     class Program
     {
         private static int alpha(int Number)
@@ -77,7 +85,7 @@ namespace DartGame
                     double RandomRadius = (double)random.NextDouble();
                     double RandomAlpha = (double)random.Next(0,360);
 
-                    Console.WriteLine(PolarToCart(Radius, alpha(Number)));
+                    Console.WriteLine(PolarToCart(Radius, alpha(Number));
                     PolarToCart(RandomRadius,RandomAlpha);
 
                 }
