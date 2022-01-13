@@ -7,8 +7,9 @@ namespace Test_functionpolarcart
         private static double[]  CartToPolar(double x, double y)
         {
             double radius = Math.Sqrt((x * x) + (y * y));
-            double alpha = Math.Atan(y/x);
-            double[] CartToPolar = new double[2] { radius, alpha };
+            double alpha = Math.Atan2(y,x);
+            double angle = alpha * (180 / Math.PI);
+            double[] CartToPolar = new double[2] { radius, angle };
 
             return CartToPolar;
             
@@ -57,23 +58,23 @@ namespace Test_functionpolarcart
 
         static void Main(string[] args)
         {
-            double[] XY = new double[2] { 1, 15 };
+            double[] XY = new double[2] { 0, -20 };
             double[] RadiusAlpha = new double[2] { 3.1622776601683795, 1.2490457723982544 };
 
-            //ArrayToString(CartToPolar(XY[0], XY[1]));
+            ArrayToString(CartToPolar(XY[0], XY[1]));
             //ArrayToString(PolarToCart(RadiusAlpha[0], RadiusAlpha[1]));
-            Random random = new Random();
-            double RandomRadius = (double)random.NextDouble();
-            double RandomAlpha = (double)random.Next(0, 1);
-
-            double[] EndDistance = new double[2] {0,0 };
-            for (int i = 0; i < 2; i++)
-            {
-                EndDistance[i] = PolarToCart(RandomRadius, RandomAlpha)[i] + PolarToCart(55, alpha(13))[i];
-            }
-          
-            ArrayToString(CartToPolar(EndDistance[0], EndDistance[1]));
-
+          //  Random random = new Random();
+          //  double RandomRadius = (double)random.NextDouble();
+          //  double RandomAlpha = (double)random.Next(0, 1);
+          //
+          //  double[] EndDistance = new double[2] {0,0};
+          //  for (int i = 0; i < 2; i++)
+          //  {
+          //      EndDistance[i] = PolarToCart(RandomRadius, RandomAlpha)[i] + PolarToCart(55, alpha(13))[i];
+          //  }
+          //
+          //  ArrayToString(CartToPolar(EndDistance[0], EndDistance[1]));
+          //
         }
     }
 }
