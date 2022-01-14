@@ -7,17 +7,41 @@ namespace Test_functionpolarcart
         private static double[]  CartToPolar(double x, double y)
         {
             double radius = Math.Sqrt((x * x) + (y * y));
-            double alpha = Math.Atan2(y,x);
-            double angle = alpha * (180 / Math.PI);
-            double[] CartToPolar = new double[2] { radius, angle };
+            double alpha;
+
+            if (x > 0 && y > 0)
+            {
+                alpha = Math.Atan(y/x) * 180 /Math.PI;
+            }
+            else if (x < 0 || y >= 0)
+            {
+                alpha = (Math.Atan(y/x) + Math.PI) * 180 / Math.PI;
+            }
+            else if (x < 0 && y < 0)
+            {
+                alpha = (Math.Atan(y/x) - Math.PI ) * 180 / Math.PI;
+            }
+            else if (x > 0 && y < 0)
+            {
+                alpha = (Math.Atan(y/x) + 2*Math.PI) * 180 / Math.PI; 
+            }
+            else
+            {
+                alpha = 0;
+            }
+
+            double[] CartToPolar = new double[2] { radius, alpha };
 
             return CartToPolar;
             
         }
         private static double[] PolarToCart(double radius, double alpha)
         {
-            double x = radius * Math.Cos(alpha);
-            double y = radius * Math.Sin(alpha);
+            double deg = Math.PI * alpha / 180;
+
+            double x = radius * Math.Cos(deg);
+            double y = radius * Math.Sin(deg);
+            
 
             double[] PolarToCart = new double[2] { x, y };
 
@@ -29,17 +53,6 @@ namespace Test_functionpolarcart
             {
                 Console.WriteLine(Convert.ToString(item));
             }
-        }
-        private static double[] ArrayToDouble(double[] Target)
-        {
-            double[] x = new double[2] { 0, 0 };
- 
-            for (int i = 0; i < 2; i++)
-            {
-                x[i] = Convert.ToDouble(Target[i]);
-            }
-           
-            return x;
         }
         private static int alpha(int number)
         {
@@ -58,23 +71,18 @@ namespace Test_functionpolarcart
 
         static void Main(string[] args)
         {
-            double[] XY = new double[2] { 0, -20 };
-            double[] RadiusAlpha = new double[2] { 3.1622776601683795, 1.2490457723982544 };
-
-            ArrayToString(CartToPolar(XY[0], XY[1]));
-            //ArrayToString(PolarToCart(RadiusAlpha[0], RadiusAlpha[1]));
-          //  Random random = new Random();
-          //  double RandomRadius = (double)random.NextDouble();
-          //  double RandomAlpha = (double)random.Next(0, 1);
-          //
-          //  double[] EndDistance = new double[2] {0,0};
-          //  for (int i = 0; i < 2; i++)
-          //  {
-          //      EndDistance[i] = PolarToCart(RandomRadius, RandomAlpha)[i] + PolarToCart(55, alpha(13))[i];
-          //  }
-          //
-          //  ArrayToString(CartToPolar(EndDistance[0], EndDistance[1]));
-          //
+            Random random = new Random();
+            double RandomRadius = (double)random.NextDouble();
+            double RandomAlpha = (double)random.Next(0,10);
+            
+            double[] EndDistance = new double[2] {0,0};
+            for (int i = 0; i < 2; i++)
+            {
+                EndDistance[i] = PolarToCart(RandomRadius, RandomAlpha)[i] + PolarToCart(55, alpha(15))[i];
+            }
+            
+            ArrayToString(CartToPolar(EndDistance[0], EndDistance[1]));
+            
         }
     }
 }
